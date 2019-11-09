@@ -1,9 +1,7 @@
 package Task_three;
 
-/*Создать программу, которая будет:
-подсчитывать количество слов в предложении
-выводить их в отсортированном виде
-делать первую букву каждого слова заглавной.
+/*Создать программу, которая будет: подсчитывать количество слов в предложении
+выводить их в отсортированном виде делать первую букву каждого слова заглавной.
 Предложение вводится вручную. (Разделитель пробел (“ ”)).*/
 
 import java.io.BufferedReader;
@@ -28,16 +26,15 @@ public class TaskThree {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         try {
             input = reader.readLine();
-            if (!input.isEmpty()) {
-                words = Arrays.asList(input.toLowerCase().split(" "));
-                System.out.println(String.format(WORD_COUNT
-                        , wordsCount(input)));
-                System.out.println(String.format(SORTED_WORDS,
-                        firstToUpperCase(sortList(words))));
+            if (input.isEmpty()) {
+                System.out.println(EMPTY_INPUT);
+                return;
             }
-            else {
-                throw new IOException();
-            }
+            words = Arrays.asList(input.toLowerCase().split(" "));
+            System.out.println(String.format(WORD_COUNT
+                    , wordsCount(input)));
+            System.out.println(String.format(SORTED_WORDS,
+                    firstToUpperCase(sortList(words))));
         } catch (IOException e) {
             System.out.println(EMPTY_INPUT);
         }

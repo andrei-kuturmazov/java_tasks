@@ -24,7 +24,8 @@ public class TaskFive {
         try {
             int border = Integer.parseInt(reader.readLine());
             if (border > 100 || border < 0) {
-                throw new IOException();
+                System.out.println(INCORRECT_INPUT);
+                return;
             }
             String output = String.format(PALINDROME_VALUES, border, palindromeValues(border));
             System.out.println(output);

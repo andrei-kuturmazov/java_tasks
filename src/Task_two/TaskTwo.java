@@ -25,6 +25,7 @@ public class TaskTwo {
             int two = Integer.parseInt(reader.readLine());
             if (one == ZERO_VALUE || two == ZERO_VALUE) {
                 System.err.println(ZERO_INPUT);
+                return;
             }
             System.out.println(String.format(GCD_VALUE, one, two, greaterCommonDelimiter(one, two)));
             System.out.println(String.format(MCM_VALUE, one, two, minimumCommonMultiple(one, two)));

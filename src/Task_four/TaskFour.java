@@ -19,7 +19,7 @@ public class TaskFour {
         private static String word;
         private static List<String> separatedWords = new ArrayList<>();
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         try {
             System.out.println(SENTENCE_INPUT);
@@ -27,7 +27,8 @@ public class TaskFour {
             System.out.println(WORD_INPUT);
             word = reader.readLine();
             if (sentence.isEmpty() || word.isEmpty()) {
-                throw new IOException();
+                System.out.println(EMPTY_INPUT);
+                return;
             }
             System.out.println(
                     String.format(REPEAT_COUNT, word, repeatCount(word)));
@@ -35,6 +36,7 @@ public class TaskFour {
         catch (IOException e) {
             System.out.println(EMPTY_INPUT);
         }
+        reader.close();
     }
 
     public static int repeatCount(String str) {
