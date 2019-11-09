@@ -11,45 +11,44 @@ import java.io.InputStreamReader;
 
 public class TaskOne {
 
-    private static final String INPUTSTRING = "Введите, пожалуйста, число для проверки";
-    private static final String ERRORMESSAGE = "Вы ввели неверное значение";
-    private static final String ZEROINPUT = "Ноль не может участвовать в проверке";
+    private static final String INPUT_STRING = "Введите, пожалуйста, число для проверки";
+    private static final String ERROR_MESSAGE = "Вы ввели неверное значение";
+    private static final String ZERO_INPUT = "Ноль не может участвовать в проверке";
     private static final String COUNTABLE = "четным";
     private static final String UNCOUNTABLE = "нечетным";
     private static final String SIMPLE = "простым";
     private static final String CONSTRUCT = "составным";
-    private static final String OUTPUTSTRING = "Введенное вами число %s является %s, %s числом";
+    private static final String OUTPUT_STRING = "Введенное вами число %s является %s, %s числом";
+    private static final int ZERO_VALUE = 0;
 
     public static void main(String[] args) throws IOException {
-        System.out.println(INPUTSTRING);
+        System.out.println(INPUT_STRING);
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         try {
             int input = Integer.parseInt(reader.readLine());
-            if (input == 0) {
-                System.out.println(ZEROINPUT);
+            if (input == ZERO_VALUE) {
+                System.out.println(ZERO_INPUT);
+                return;
             }
-            String output = String.format(OUTPUTSTRING, input, isCountable(input), isConstruct(input));
+            String output = String.format(OUTPUT_STRING, input, getParityType(input), determineNumberType(input));
             System.out.println(output);
-
         } catch (IOException e) {
-            System.err.println(ERRORMESSAGE);
+            System.err.println(ERROR_MESSAGE);
         }
         reader.close();
     }
 
-    public static String isCountable(int input) {
+    public static String getParityType(int input) {
         return input % 2 == 0 ? COUNTABLE : UNCOUNTABLE;
     }
 
-    public static String isConstruct(int input) {
+    public static String determineNumberType(int input) {
         int absolutValue = Math.abs(input);
-        String output = SIMPLE;
         for (int index = 2; index < absolutValue; index++) {
             if (absolutValue % index == 0) {
-                output = CONSTRUCT;
-                break;
+                return CONSTRUCT;
             }
         }
-        return output;
+        return SIMPLE;
     }
 }
