@@ -11,7 +11,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class TaskFour {
-        private static String sentense;
+        private static String sentence;
         private static String word;
         private static List<String> separatedWords = new ArrayList<>();
 
@@ -20,15 +20,15 @@ public class TaskFour {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         try {
             System.out.println("Пожалуйста введите предложение для поиска слова");
-            sentense = reader.readLine();
+            sentence = reader.readLine();
             System.out.println("Пожалуйста введите слово для поиска в предложении");
             word = reader.readLine();
 
-            if (sentense.isEmpty() || word.isEmpty())
+            if (sentence.isEmpty() || word.isEmpty())
                 throw new Exception();
 
             System.out.println(
-                    String.format("Введенное вами слово %s встречает в тексте %s раз без учета регистра", word, repeatCount(word)));
+                    String.format("Введенное вами слово \"%s\" встречает в тексте %s раз(а) без учета регистра", word, repeatCount(word)));
         }
         catch (Exception e) {
             System.out.println("Вы ввели пустое значение для предложения или слова");
@@ -37,7 +37,7 @@ public class TaskFour {
 
     public static int repeatCount(String str) {
         int count = 0;
-        separatedWords = Arrays.asList(sentense.split(" "));
+        separatedWords = Arrays.asList(sentence.split(" "));
         for (String s : separatedWords) {
             if (s.toLowerCase().equals(str.toLowerCase()))
                 count++;

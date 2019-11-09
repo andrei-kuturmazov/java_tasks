@@ -20,8 +20,8 @@ public class TaskOne {
         try {
             int input = Integer.parseInt(reader.readLine());
 
-            if (Math.abs(input) == 1 || Math.abs(input) == 0) {
-                System.out.print("Единица и ноль не могут участвовать в проверке. ");
+            if (input == 0) {
+                System.out.print("Ноль не может участвовать в проверке. ");
                 throw new Exception();
             }
 

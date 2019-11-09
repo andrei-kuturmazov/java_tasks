@@ -56,10 +56,9 @@ public class TaskThree {
     }
 
     public static List<String> firstToUpperCase(List<String> words){
-        List<String> inputList = new ArrayList<>(words);
         List <String> output = new ArrayList<>();
 
-        for (String i: inputList) {
+        for (String i: words) {
             output.add(i.substring(0, 1).toUpperCase() + i.substring(1));
         }
         return output;

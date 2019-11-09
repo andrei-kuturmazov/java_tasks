@@ -36,7 +36,7 @@ public class TaskFive {
 
     public static List<Integer> palindromeValues(int a){
 
-        data = new ArrayList<>();
+        data = new ArrayList<>(a);
         for (int i = 0; i <= a; i++)
             data.add(i);
 
