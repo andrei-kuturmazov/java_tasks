@@ -18,9 +18,9 @@ public class TaskTwo {
         try {
             int one = Integer.parseInt(reader.readLine());
             int two = Integer.parseInt(reader.readLine());
-            if (one == 0 || two == 0)
+            if (one == 0 || two == 0) {
                 throw new Exception();
-
+            }
             String nodValue = String.format("Наибольший общий делитель, введенных чисел %s и %s равен %s", one, two, nod(one, two));
             String nokValue = String.format("Наименьшее общее кратное, введенных чисел %s и %s равно %s", one, two, nok(one, two));
 
@@ -28,12 +28,10 @@ public class TaskTwo {
             System.out.println(nokValue);
 
         } catch (Exception e) {
-            System.out.println("Введены некорректные данные");
+            System.err.println("Введены некорректные данные");
         }
-
         reader.close();
     }
-
     // Расчет НОД и НОК рекурсивным способом
     public static int nod(int a, int b) {
         if (b == 0)
