@@ -37,7 +37,6 @@ public class TaskOne {
         catch (Exception e) {
             System.out.println("Вы ввели неверное значение");
         }
-
         reader.close();
     }
 
