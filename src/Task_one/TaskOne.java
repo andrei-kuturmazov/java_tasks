@@ -13,26 +13,27 @@ public class TaskOne {
 
     private static final String INPUT_STRING = "Введите, пожалуйста, число для проверки";
     private static final String ERROR_MESSAGE = "Вы ввели неверное значение";
-    private static final String ZERO_INPUT = "Ноль не может участвовать в проверке";
+    private static final String ZERO_INPUT = "Ноль и единица не могут участвовать в проверке";
     private static final String COUNTABLE = "четным";
     private static final String UNCOUNTABLE = "нечетным";
     private static final String SIMPLE = "простым";
     private static final String CONSTRUCT = "составным";
     private static final String OUTPUT_STRING = "Введенное вами число %s является %s, %s числом";
     private static final int ZERO_VALUE = 0;
+    private static final int ABS_ONE = 1;
 
     public static void main(String[] args) throws IOException {
         System.out.println(INPUT_STRING);
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         try {
             int input = Integer.parseInt(reader.readLine());
-            if (input == ZERO_VALUE) {
+            if (input == ZERO_VALUE || Math.abs(input) == ABS_ONE) {
                 System.out.println(ZERO_INPUT);
                 return;
             }
             String output = String.format(OUTPUT_STRING, input, getParityType(input), determineNumberType(input));
             System.out.println(output);
-        } catch (IOException e) {
+        } catch (NumberFormatException e) {
             System.err.println(ERROR_MESSAGE);
         }
         reader.close();
