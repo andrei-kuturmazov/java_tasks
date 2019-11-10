@@ -25,9 +25,9 @@ public class TaskFour {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         try {
             System.out.println(SENTENCE_INPUT);
-            sentence = reader.readLine();
+            sentence = reader.readLine().trim();
             System.out.println(WORD_INPUT);
-            word = reader.readLine();
+            word = reader.readLine().trim();
             if (sentence.isEmpty() || word.isEmpty()) {
                 System.out.println(EMPTY_INPUT);
                 return;
