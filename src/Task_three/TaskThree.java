@@ -29,11 +29,12 @@ public class TaskThree {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         try {
             input = reader.readLine();
-            if (input.isEmpty()) {
+            String trimmedInput = input.trim();
+            if (trimmedInput.isEmpty()) {
                 System.out.println(EMPTY_INPUT);
                 return;
             }
-            words = Arrays.asList(input.trim().toLowerCase().split(" "));
+            words = Arrays.asList(trimmedInput.toLowerCase().split(" "));
             System.out.println(String.format(WORD_COUNT, wordsCount(words)));
             System.out.println(String.format(SORTED_WORDS, firstToUpperCase(sortList(words))));
         } catch (IOException e) {
