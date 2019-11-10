@@ -21,15 +21,15 @@ public class TaskTwo {
         System.out.println(INPUT_STRING);
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         try {
-            int one = Integer.parseInt(reader.readLine());
-            int two = Integer.parseInt(reader.readLine());
+            int one = Integer.parseInt(reader.readLine().trim());
+            int two = Integer.parseInt(reader.readLine().trim());
             if (one == ZERO_VALUE || two == ZERO_VALUE) {
                 System.err.println(ZERO_INPUT);
                 return;
             }
             System.out.println(String.format(GCD_VALUE, one, two, greaterCommonDelimiter(one, two)));
             System.out.println(String.format(MCM_VALUE, one, two, minimumCommonMultiple(one, two)));
-        } catch (IOException e) {
+        } catch (NumberFormatException e) {
             System.err.println(ERROR_MESSAGE);
         }
         reader.close();

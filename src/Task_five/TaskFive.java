@@ -22,14 +22,14 @@ public class TaskFive {
         System.out.println(INPUT_STRING);
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         try {
-            int border = Integer.parseInt(reader.readLine());
+            int border = Integer.parseInt(reader.readLine().trim());
             if (border > 100 || border < 0) {
                 System.out.println(INCORRECT_INPUT);
                 return;
             }
             System.out.println(String.format(PALINDROME_VALUES, border, palindromeValues(border)));
-        } catch (IOException e) {
-            System.out.println(INCORRECT_INPUT);
+        } catch (NumberFormatException e) {
+            System.err.println(INCORRECT_INPUT);
         }
         reader.close();
     }

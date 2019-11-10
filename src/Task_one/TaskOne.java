@@ -26,7 +26,7 @@ public class TaskOne {
         System.out.println(INPUT_STRING);
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         try {
-            int input = Integer.parseInt(reader.readLine());
+            int input = Integer.parseInt(reader.readLine().trim());
             if (input == ZERO_VALUE || Math.abs(input) == ABS_ONE) {
                 System.out.println(ZERO_INPUT);
                 return;
