@@ -27,8 +27,7 @@ public class TaskFive {
                 System.out.println(INCORRECT_INPUT);
                 return;
             }
-            String output = String.format(PALINDROME_VALUES, border, palindromeValues(border));
-            System.out.println(output);
+            System.out.println(String.format(PALINDROME_VALUES, border, palindromeValues(border)));
         } catch (IOException e) {
             System.out.println(INCORRECT_INPUT);
         }

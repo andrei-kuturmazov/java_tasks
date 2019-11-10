@@ -11,13 +11,15 @@ import java.util.Arrays;
 import java.util.List;
 
 public class TaskFour {
-        private static final String SENTENCE_INPUT = "Пожалуйста введите предложение для поиска слова";
-        private static final String WORD_INPUT = "Пожалуйста введите слово для поиска в предложении";
-        private static final String EMPTY_INPUT = "Вы ввели пустое значение для предложения или слова";
-        private static final String REPEAT_COUNT = "Введенное вами слово \"%s\" встречает в тексте %s раз(а) без учета регистра";
-        private static String sentence;
-        private static String word;
-        private static List<String> separatedWords = new ArrayList<>();
+
+    private static final String SENTENCE_INPUT = "Пожалуйста введите предложение для поиска слова";
+    private static final String WORD_INPUT = "Пожалуйста введите слово для поиска в предложении";
+    private static final String EMPTY_INPUT = "Вы ввели пустое значение для предложения или слова";
+    private static final String REPEAT_COUNT = "Введенное вами слово \"%s\" встречает в тексте %s раз(а) без учета регистра";
+    private static String sentence;
+    private static String word;
+    private static List<String> separatedWords = new ArrayList<>();
+    private static int wordCount = 0;
 
     public static void main(String[] args) throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
@@ -30,22 +32,19 @@ public class TaskFour {
                 System.out.println(EMPTY_INPUT);
                 return;
             }
-            System.out.println(
-                    String.format(REPEAT_COUNT, word, repeatCount(word)));
-        }
-        catch (IOException e) {
+            System.out.println(String.format(REPEAT_COUNT, word, repeatCount(word)));
+        } catch (IOException e) {
             System.out.println(EMPTY_INPUT);
         }
         reader.close();
     }
 
     public static int repeatCount(String str) {
-        int count = 0;
         separatedWords = Arrays.asList(sentence.split(" "));
         for (String s : separatedWords) {
             if (s.toLowerCase().equals(str.toLowerCase()))
-                count++;
+                wordCount++;
         }
-        return count;
+        return wordCount;
     }
 }
