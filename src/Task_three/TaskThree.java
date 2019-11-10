@@ -22,6 +22,7 @@ public class TaskThree {
     private static List<String> words = new ArrayList<>();
     private static List<String> outputWords;
     private static List<String> sortedOutput;
+    private static int COUNT = 0;
 
     public static void main(String[] args) throws IOException {
         System.out.println(INPUT_STRING);
@@ -32,8 +33,8 @@ public class TaskThree {
                 System.out.println(EMPTY_INPUT);
                 return;
             }
-            words = Arrays.asList(input.toLowerCase().split(" "));
-            System.out.println(String.format(WORD_COUNT, wordsCount(input)));
+            words = Arrays.asList(input.trim().toLowerCase().split(" "));
+            System.out.println(String.format(WORD_COUNT, wordsCount(words)));
             System.out.println(String.format(SORTED_WORDS, firstToUpperCase(sortList(words))));
         } catch (IOException e) {
             System.out.println(EMPTY_INPUT);
@@ -41,8 +42,11 @@ public class TaskThree {
         reader.close();
     }
 
-    public static int wordsCount(String input) {
-        return input.trim().split(" ").length;
+    public static int wordsCount(List<String> words) {
+        for (String word : words) {
+            COUNT++;
+        }
+        return COUNT;
     }
 
     public static List<String> sortList(List<String> words) {

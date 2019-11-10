@@ -1,15 +1,21 @@
 package Task_six;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.util.List;
 
 public class Bagpack {
 
-    private static Item[] items;
-    private static int numOfItems;
-    private static String itemName;
+    private static List<Item> items;
+    private int weight;
 
+    public Bagpack(int weight) {
+        this.weight = weight;
+    }
 
+    public static List<Item> getItems() {
+        return items;
+    }
 
+    public int getWeight() {
+        return weight;
+    }
 }
