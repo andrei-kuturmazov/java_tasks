@@ -39,10 +39,10 @@ public class TaskFour {
         reader.close();
     }
 
-    public static int repeatCount(String str) {
+    public static int repeatCount(String string) {
         separatedWords = Arrays.asList(sentence.split(" "));
-        for (String s : separatedWords) {
-            if (s.toLowerCase().equals(str.toLowerCase()))
+        for (String word : separatedWords) {
+            if (word.toLowerCase().equals(string.toLowerCase()))
                 wordCount++;
         }
         return wordCount;

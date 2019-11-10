@@ -20,6 +20,8 @@ public class TaskThree {
     private static final String SORTED_WORDS = "Отсортированные слова с первой заглавной буквой: %s";
     private static String input;
     private static List<String> words = new ArrayList<>();
+    private static List<String> outputWords;
+    private static List<String> sortedOutput;
 
     public static void main(String[] args) throws IOException {
         System.out.println(INPUT_STRING);
@@ -31,10 +33,8 @@ public class TaskThree {
                 return;
             }
             words = Arrays.asList(input.toLowerCase().split(" "));
-            System.out.println(String.format(WORD_COUNT
-                    , wordsCount(input)));
-            System.out.println(String.format(SORTED_WORDS,
-                    firstToUpperCase(sortList(words))));
+            System.out.println(String.format(WORD_COUNT, wordsCount(input)));
+            System.out.println(String.format(SORTED_WORDS, firstToUpperCase(sortList(words))));
         } catch (IOException e) {
             System.out.println(EMPTY_INPUT);
         }
@@ -46,19 +46,19 @@ public class TaskThree {
     }
 
     public static List<String> sortList(List<String> words) {
-        List<String> output = new ArrayList<>(words);
-        for (String s : output) {
-            s.toLowerCase();
+        sortedOutput = new ArrayList<>(words);
+        for (String word : sortedOutput) {
+            word.toLowerCase();
         }
-        Collections.sort(output, String.CASE_INSENSITIVE_ORDER);
-        return output;
+        Collections.sort(sortedOutput, String.CASE_INSENSITIVE_ORDER);
+        return sortedOutput;
     }
 
     public static List<String> firstToUpperCase(List<String> words) {
-        List<String> output = new ArrayList<>();
-        for (String i : words) {
-            output.add(i.substring(0, 1).toUpperCase() + i.substring(1));
+        outputWords = new ArrayList<>();
+        for (String word : words) {
+            outputWords.add(word.substring(0, 1).toUpperCase() + word.substring(1));
         }
-        return output;
+        return outputWords;
     }
 }
