@@ -42,6 +42,6 @@ public class TaskTwo {
     }
 
     public static int minimumCommonMultiple(int a, int b) {
-        return (a * b) / greaterCommonDelimiter(a, b);
+        return Math.abs((a * b) / greaterCommonDelimiter(a, b));
     }
 }

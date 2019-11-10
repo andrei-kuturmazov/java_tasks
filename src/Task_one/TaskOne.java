@@ -28,7 +28,7 @@ public class TaskOne {
         try {
             int input = Integer.parseInt(reader.readLine().trim());
             if (input == ZERO_VALUE || Math.abs(input) == ABS_ONE) {
-                System.out.println(ZERO_INPUT);
+                System.err.println(ZERO_INPUT);
                 return;
             }
             String output = String.format(OUTPUT_STRING, input, getParityType(input), determineNumberType(input));

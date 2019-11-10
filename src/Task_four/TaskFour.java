@@ -34,7 +34,7 @@ public class TaskFour {
             }
             System.out.println(String.format(REPEAT_COUNT, word, repeatCount(word)));
         } catch (IOException e) {
-            System.out.println(EMPTY_INPUT);
+            System.err.println(EMPTY_INPUT);
         }
         reader.close();
     }
