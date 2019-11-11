@@ -17,7 +17,7 @@ public class TaskTwo {
     private static final String MCM_VALUE = "Наименьшее общее кратное, введенных чисел %s и %s равно %s";
     private static final int ZERO_VALUE = 0;
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         System.out.println(INPUT_STRING);
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))){
             int one = Integer.parseInt(reader.readLine().trim());
@@ -35,13 +35,13 @@ public class TaskTwo {
         }
 
     }
-
+    // Returns greater common delimiter using recursion
     public static int greaterCommonDelimiter(int a, int b) {
         if (b == 0)
             return Math.abs(a);
         return greaterCommonDelimiter(b, a % b);
     }
-
+    // Returns minimum common multiple of two number using greater common delimiter
     public static int minimumCommonMultiple(int a, int b) {
         return Math.abs((a * b) / greaterCommonDelimiter(a, b));
     }

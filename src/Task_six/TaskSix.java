@@ -17,7 +17,7 @@ public class TaskSix {
             System.out.println(item.toString());
         }
     }
-
+    // Add items to list for check
     public static void addItems(List<Item> inputItems) {
         inputItems.add(new Item(5, 10));
         inputItems.add(new Item(25, 80));

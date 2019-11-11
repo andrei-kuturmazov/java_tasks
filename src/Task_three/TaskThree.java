@@ -23,7 +23,7 @@ public class TaskThree {
     private static List<String> outputWords;
     private static List<String> sortedOutput;
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         System.out.println(INPUT_STRING);
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))){
             input = reader.readLine().trim();
@@ -38,11 +38,11 @@ public class TaskThree {
             System.err.println(EMPTY_INPUT);
         }
     }
-
+    // Returns the words count
     public static int wordsCount(List<String> words) {
         return words.size();
     }
-
+    // Returns the sorted array of words in lowercase
     public static List<String> sortList(List<String> words) {
         sortedOutput = new ArrayList<>(words);
         for (String word : sortedOutput) {
@@ -51,7 +51,7 @@ public class TaskThree {
         Collections.sort(sortedOutput, String.CASE_INSENSITIVE_ORDER);
         return sortedOutput;
     }
-
+    //Returns the array of words with first symbol as an uppercase
     public static List<String> firstToUpperCase(List<String> words) {
         outputWords = new ArrayList<>();
         for (String word : words) {

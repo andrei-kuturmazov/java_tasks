@@ -18,9 +18,8 @@ public class TaskFive {
     private static List<Integer> data;
     private static List<Integer> palindromeCheck;
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         System.out.println(INPUT_STRING);
-
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))){
             int border = Integer.parseInt(reader.readLine().trim());
             if (border > 100 || border < 0) {
@@ -35,7 +34,7 @@ public class TaskFive {
         }
 
     }
-
+    // Returns the array of palindrome values
     public static List<Integer> palindromeValues(int input){
         data = new ArrayList<>(input);
         for (int index = 0; index <= input; index++) {

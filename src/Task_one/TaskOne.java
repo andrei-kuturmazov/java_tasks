@@ -22,7 +22,7 @@ public class TaskOne {
     private static final int ZERO_VALUE = 0;
     private static final int ABS_ONE = 1;
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         System.out.println(INPUT_STRING);
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))){
             int input = Integer.parseInt(reader.readLine().trim());
@@ -39,11 +39,11 @@ public class TaskOne {
         }
 
     }
-
+    // Returns the number parity type
     public static String getParityType(int input) {
         return input % 2 == 0 ? COUNTABLE : UNCOUNTABLE;
     }
-
+    // Returns determined number type
     public static String determineNumberType(int input) {
         int absolutValue = Math.abs(input);
         for (int index = 2; index < absolutValue; index++) {

@@ -4,6 +4,7 @@ import java.util.List;
 
 public class Bagpack {
 
+    // Returns the items list based on Bellman's algorithm
     public void packItems(List<Item> items, int maxWeight) {
         int[][] weightCount = new int[maxWeight + 1][items.size()];
         for (int weight = 1; weight <= maxWeight; weight++) {

@@ -21,7 +21,7 @@ public class TaskFour {
     private static List<String> separatedWords = new ArrayList<>();
     private static int wordCount = 0;
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))) {
             System.out.println(SENTENCE_INPUT);
             sentence = reader.readLine().trim();
@@ -36,7 +36,7 @@ public class TaskFour {
             System.err.println(EMPTY_INPUT);
         }
     }
-
+    // Returns the words count in sentence separated by " "
     public static int repeatCount(String string) {
         separatedWords = Arrays.asList(sentence.split(" "));
         for (String word : separatedWords) {
