@@ -47,7 +47,6 @@ public class TaskThree {
     }
     //Returns the array of words with first symbol as an uppercase
     public static List<String> firstToUpperCase(List<String> words) {
-        List<String> output = words.stream().map(word -> word.substring(0, 1).toUpperCase() + word.substring(1)).collect(Collectors.toList());
-        return output;
+        return words.stream().map(word -> word.substring(0, 1).toUpperCase() + word.substring(1)).collect(Collectors.toList());
     }
 }
