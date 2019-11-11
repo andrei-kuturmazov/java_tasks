@@ -20,8 +20,8 @@ public class TaskFive {
 
     public static void main(String[] args) throws IOException {
         System.out.println(INPUT_STRING);
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        try {
+
+        try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))){
             int border = Integer.parseInt(reader.readLine().trim());
             if (border > 100 || border < 0) {
                 System.out.println(INCORRECT_INPUT);
@@ -30,8 +30,10 @@ public class TaskFive {
             System.out.println(String.format(PALINDROME_VALUES, border, palindromeValues(border)));
         } catch (NumberFormatException e) {
             System.err.println(INCORRECT_INPUT);
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-        reader.close();
+
     }
 
     public static List<Integer> palindromeValues(int input){

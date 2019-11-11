@@ -24,8 +24,7 @@ public class TaskOne {
 
     public static void main(String[] args) throws IOException {
         System.out.println(INPUT_STRING);
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        try {
+        try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))){
             int input = Integer.parseInt(reader.readLine().trim());
             if (input == ZERO_VALUE || Math.abs(input) == ABS_ONE) {
                 System.err.println(ZERO_INPUT);
@@ -35,8 +34,10 @@ public class TaskOne {
             System.out.println(output);
         } catch (NumberFormatException e) {
             System.err.println(ERROR_MESSAGE);
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-        reader.close();
+
     }
 
     public static String getParityType(int input) {

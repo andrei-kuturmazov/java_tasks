@@ -25,8 +25,7 @@ public class TaskThree {
 
     public static void main(String[] args) throws IOException {
         System.out.println(INPUT_STRING);
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        try {
+        try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))){
             input = reader.readLine().trim();
             if (input.isEmpty()) {
                 System.out.println(EMPTY_INPUT);
@@ -38,7 +37,6 @@ public class TaskThree {
         } catch (IOException e) {
             System.err.println(EMPTY_INPUT);
         }
-        reader.close();
     }
 
     public static int wordsCount(List<String> words) {

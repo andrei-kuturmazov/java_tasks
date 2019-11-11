@@ -19,8 +19,7 @@ public class TaskTwo {
 
     public static void main(String[] args) throws IOException {
         System.out.println(INPUT_STRING);
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        try {
+        try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))){
             int one = Integer.parseInt(reader.readLine().trim());
             int two = Integer.parseInt(reader.readLine().trim());
             if (one == ZERO_VALUE || two == ZERO_VALUE) {
@@ -31,8 +30,10 @@ public class TaskTwo {
             System.out.println(String.format(MCM_VALUE, one, two, minimumCommonMultiple(one, two)));
         } catch (NumberFormatException e) {
             System.err.println(ERROR_MESSAGE);
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-        reader.close();
+
     }
 
     public static int greaterCommonDelimiter(int a, int b) {

@@ -22,8 +22,7 @@ public class TaskFour {
     private static int wordCount = 0;
 
     public static void main(String[] args) throws IOException {
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        try {
+        try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))) {
             System.out.println(SENTENCE_INPUT);
             sentence = reader.readLine().trim();
             System.out.println(WORD_INPUT);
@@ -36,7 +35,6 @@ public class TaskFour {
         } catch (IOException e) {
             System.err.println(EMPTY_INPUT);
         }
-        reader.close();
     }
 
     public static int repeatCount(String string) {
