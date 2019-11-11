@@ -12,7 +12,7 @@ public class TaskSix {
         List<Item> inputItems = new ArrayList<>();
         Bagpack bagpack = new Bagpack();
         addItems(inputItems);
-        bagpack.packItems(inputItems, 31);
+        bagpack.packItems(inputItems, 30);
         for (Item item : inputItems) {
             System.out.println(item.toString());
         }
@@ -23,6 +23,8 @@ public class TaskSix {
         inputItems.add(new Item(25, 80));
         inputItems.add(new Item(15, 30));
         inputItems.add(new Item(5, 20));
-        inputItems.add(new Item(30, 85));
+        inputItems.add(new Item(30, 65));
+        inputItems.add(new Item(15, 70));
+        inputItems.add(new Item(35, 65));
     }
 }
