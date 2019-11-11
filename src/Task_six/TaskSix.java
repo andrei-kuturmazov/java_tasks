@@ -23,6 +23,6 @@ public class TaskSix {
         inputItems.add(new Item(25, 80));
         inputItems.add(new Item(15, 30));
         inputItems.add(new Item(5, 20));
-        inputItems.add(new Item(30, 100));
+        inputItems.add(new Item(30, 85));
     }
 }
