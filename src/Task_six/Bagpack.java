@@ -4,18 +4,22 @@ import java.util.List;
 
 public class Bagpack {
 
-    private static List<Item> items;
-    private int weight;
-
-    public Bagpack(int weight) {
-        this.weight = weight;
+    public void packItems(List<Item> items, int maxWeight) {
+        int[][] weightCount = new int[maxWeight + 1][items.size()];
+        for (int weight = 1; weight <= maxWeight; weight++) {
+            for (int index = 1; index < items.size(); index++) {
+                if (items.get(index).getWeight() > weight) {
+                    weightCount[weight][index] = weightCount[weight][index - 1];
+                    items.get(index).setTaken(false);
+                } else if (weightCount[weight][index - 1] >= (weightCount[weight - items.get(index).getWeight()][index - 1] + items.get(index).getPrice())) {
+                    weightCount[weight][index] = weightCount[weight][index - 1];
+                    items.get(index).setTaken(false);
+                } else {
+                    weightCount[weight][index] = weightCount[weight - items.get(index).getWeight()][index - 1] + items.get(index).getPrice();
+                    items.get(index).setTaken(true);
+                }
+            }
+        }
     }
 
-    public static List<Item> getItems() {
-        return items;
-    }
-
-    public int getWeight() {
-        return weight;
-    }
 }

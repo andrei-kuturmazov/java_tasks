@@ -2,8 +2,9 @@ package Task_six;
 
 public class Item {
 
-    private int weight;
-    private int price;
+    private final int weight;
+    private final int price;
+    private boolean isTaken;
 
     public Item(int weight, int price) {
         this.weight = weight;
@@ -18,11 +19,16 @@ public class Item {
         return price;
     }
 
+    public void setTaken(boolean taken) {
+        isTaken = taken;
+    }
+
     @Override
     public String toString() {
-        return "Item{" +
-                "weight=" + weight +
-                ", price=" + price +
+        return "Item {" +
+                "weight = " + weight +
+                ", price = " + price +
+                ", isTaken = " + isTaken +
                 '}';
     }
 }
