@@ -21,7 +21,6 @@ public class TaskThree {
     private static final String SORTED_WORDS = "Отсортированные слова с первой заглавной буквой: %s";
     private static String input;
     private static List<String> words = new ArrayList<>();
-    private static List<String> outputWords;
     private static List<String> sortedOutput;
 
     public static void main(String[] args) {
