@@ -45,7 +45,6 @@ public class TaskThree {
     // Returns the sorted array of words in lowercase
     public static List<String> sortList(List<String> words) {
         sortedOutput = new ArrayList<>(words);
-        sortedOutput.stream().forEach(word -> word.toLowerCase());
         Collections.sort(sortedOutput, String.CASE_INSENSITIVE_ORDER);
         return sortedOutput;
     }
