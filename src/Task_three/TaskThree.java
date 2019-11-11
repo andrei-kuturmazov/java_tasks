@@ -32,15 +32,11 @@ public class TaskThree {
                 return;
             }
             words = Arrays.asList(input.toLowerCase().split(" "));
-            System.out.println(String.format(WORD_COUNT, wordsCount(words)));
+            System.out.println(String.format(WORD_COUNT, words.size()));
             System.out.println(String.format(SORTED_WORDS, firstToUpperCase(sortList(words))));
         } catch (IOException e) {
             System.err.println(EMPTY_INPUT);
         }
-    }
-    // Returns the words count
-    public static int wordsCount(List<String> words) {
-        return words.size();
     }
     // Returns the sorted array of words in lowercase
     public static List<String> sortList(List<String> words) {
