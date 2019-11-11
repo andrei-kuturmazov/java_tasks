@@ -34,7 +34,7 @@ public class TaskThree {
             }
             words = Arrays.asList(input.toLowerCase().split(" "));
             System.out.println(String.format(WORD_COUNT, words.size()));
-            System.out.println(String.format(SORTED_WORDS, firstToUpperCase(sortList(words))));
+            System.out.println(String.format(SORTED_WORDS, wordsFirstLetterToUpperCase(sortList(words))));
         } catch (IOException e) {
             System.err.println(EMPTY_INPUT);
         }
@@ -45,8 +45,13 @@ public class TaskThree {
         Collections.sort(sortedOutput, String.CASE_INSENSITIVE_ORDER);
         return sortedOutput;
     }
-    //Returns the array of words with first symbol as an uppercase
-    public static List<String> firstToUpperCase(List<String> words) {
-        return words.stream().map(word -> word.substring(0, 1).toUpperCase() + word.substring(1)).collect(Collectors.toList());
+    //Returns the array of words with first symbol as an uppercase using stream
+    public static List<String> wordsFirstLetterToUpperCase(List<String> words) {
+        return words.stream().map(TaskThree::firstLetterToUpperCase)
+                .collect(Collectors.toList());
+    }
+    //Returns word with first letter in uppercase
+    public static String firstLetterToUpperCase (String word) {
+        return word.substring(0, 1).toUpperCase() + word.substring(1);
     }
 }
