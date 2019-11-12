@@ -35,7 +35,7 @@ public class TaskThree {
             System.out.println(String.format(WORD_COUNT, words.size()));
             System.out.println(String.format(SORTED_WORDS, wordsFirstLetterToUpperCase(sortList(words))));
         } catch (IOException e) {
-            System.err.println(EMPTY_INPUT);
+            e.printStackTrace();
         }
     }
     // Returns the sorted array of words in lowercase
