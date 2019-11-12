@@ -29,7 +29,7 @@ public class TaskFour {
             }
             System.out.println(String.format(REPEAT_COUNT, wordForSearch, repeatCount(wordForSearch, sentenceForSearch)));
         } catch (IOException e) {
-            System.err.println(EMPTY_INPUT);
+            e.printStackTrace();
         }
     }
     // Returns the words count in sentence separated by " "
