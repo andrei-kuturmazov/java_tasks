@@ -15,34 +15,30 @@ public class TaskFour {
     private static final String SENTENCE_INPUT = "Пожалуйста введите предложение для поиска слова";
     private static final String WORD_INPUT = "Пожалуйста введите слово для поиска в предложении";
     private static final String EMPTY_INPUT = "Вы ввели пустое значение для предложения или слова";
-    private static final String REPEAT_COUNT = "Введенное вами слово \"%s\" встречает в тексте %s раз(а) без учета регистра";
-    private static String sentence;
-    private static String word;
+    private static final String REPEAT_COUNT = "Введенное вами слово \"%s\" встречаетcя в тексте %s раз(а) без учета регистра";
+    private static String sentenceForSearch;
+    private static String wordForSearch;
     private static List<String> separatedWords = new ArrayList<>();
-    private static int wordCount = 0;
 
     public static void main(String[] args) {
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))) {
             System.out.println(SENTENCE_INPUT);
-            sentence = reader.readLine().trim();
+            sentenceForSearch = reader.readLine().trim();
             System.out.println(WORD_INPUT);
-            word = reader.readLine().trim();
-            if (sentence.isEmpty() || word.isEmpty()) {
+            wordForSearch = reader.readLine().trim();
+            if (sentenceForSearch.isEmpty() || wordForSearch.isEmpty()) {
                 System.out.println(EMPTY_INPUT);
                 return;
             }
-            System.out.println(String.format(REPEAT_COUNT, word, repeatCount(word)));
+            System.out.println(String.format(REPEAT_COUNT, wordForSearch, repeatCount(wordForSearch)));
         } catch (IOException e) {
             System.err.println(EMPTY_INPUT);
         }
     }
     // Returns the words count in sentence separated by " "
-    public static int repeatCount(String string) {
-        separatedWords = Arrays.asList(sentence.split(" "));
-        for (String word : separatedWords) {
-            if (word.toLowerCase().equals(string.toLowerCase()))
-                wordCount++;
-        }
-        return wordCount;
+    public static long repeatCount(String string) {
+        separatedWords = Arrays.asList(sentenceForSearch.split(" "));
+        return separatedWords.stream().filter(word -> word.toLowerCase().equals(string.toLowerCase()))
+                .count();
     }
 }
