@@ -6,9 +6,7 @@ package Task_four;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 public class TaskFour {
 
@@ -18,7 +16,6 @@ public class TaskFour {
     private static final String REPEAT_COUNT = "Введенное вами слово \"%s\" встречаетcя в тексте %s раз(а) без учета регистра";
     private static String sentenceForSearch;
     private static String wordForSearch;
-    private static List<String> separatedWords = new ArrayList<>();
 
     public static void main(String[] args) {
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))) {
@@ -30,15 +27,14 @@ public class TaskFour {
                 System.out.println(EMPTY_INPUT);
                 return;
             }
-            System.out.println(String.format(REPEAT_COUNT, wordForSearch, repeatCount(wordForSearch)));
+            System.out.println(String.format(REPEAT_COUNT, wordForSearch, repeatCount(wordForSearch, sentenceForSearch)));
         } catch (IOException e) {
             System.err.println(EMPTY_INPUT);
         }
     }
     // Returns the words count in sentence separated by " "
-    public static long repeatCount(String string) {
-        separatedWords = Arrays.asList(sentenceForSearch.split(" "));
-        return separatedWords.stream().filter(word -> word.toLowerCase().equals(string.toLowerCase()))
+    public static long repeatCount(String wordForSearch, String sentenceForSearch) {
+        return Arrays.stream(sentenceForSearch.split(" ")).filter(word -> word.toLowerCase().equals(wordForSearch.toLowerCase()))
                 .count();
     }
 }
