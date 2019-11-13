@@ -17,7 +17,11 @@ public class TaskSix {
             System.out.println(item.toString());
         }
     }
-    // Add items to list for check
+
+    /**
+     * Add items to list for check
+     * @param inputItems
+     */
     public static void addItems(List<Item> inputItems) {
         inputItems.add(new Item(5, 10));
         inputItems.add(new Item(25, 80));

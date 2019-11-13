@@ -32,9 +32,13 @@ public class TaskFive {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
-    // Returns the array of palindrome values
+
+    /**
+     * Returns the array of palindrome values
+     * @param input
+     * @return
+     */
     public static List<Integer> palindromeValues(int input){
         data = new ArrayList<>(input);
         for (int index = 0; index <= input; index++) {

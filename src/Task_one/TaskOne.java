@@ -37,17 +37,26 @@ public class TaskOne {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
-    // Returns the number parity type
+
+    /**
+     * Returns the number parity type
+     * @param input
+     * @return
+     */
     public static String getParityType(int input) {
         return input % 2 == 0 ? COUNTABLE : UNCOUNTABLE;
     }
-    // Returns determined number type
+
+    /**
+     * Returns determined number type
+     * @param input
+     * @return
+     */
     public static String determineNumberType(int input) {
-        int absolutValue = Math.abs(input);
-        for (int index = 2; index < absolutValue; index++) {
-            if (absolutValue % index == 0) {
+        int absoluteValue = Math.abs(input);
+        for (int index = 2; index < absoluteValue; index++) {
+            if (absoluteValue % index == 0) {
                 return CONSTRUCT;
             }
         }

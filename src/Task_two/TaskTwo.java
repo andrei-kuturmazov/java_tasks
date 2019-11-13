@@ -33,15 +33,26 @@ public class TaskTwo {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
-    // Returns greater common delimiter using recursion
+
+    /**
+     * Returns greater common delimiter using recursion
+     * @param a
+     * @param b
+     * @return
+     */
     public static int greaterCommonDelimiter(int a, int b) {
         if (b == 0)
             return Math.abs(a);
         return greaterCommonDelimiter(b, a % b);
     }
-    // Returns minimum common multiple of two number using greater common delimiter
+
+    /**
+     * Returns minimum common multiple of two number using greater common delimiter
+     * @param a
+     * @param b
+     * @return
+     */
     public static int minimumCommonMultiple(int a, int b) {
         return Math.abs((a * b) / greaterCommonDelimiter(a, b));
     }
