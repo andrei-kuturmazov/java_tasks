@@ -36,14 +36,14 @@ public class TaskThree {
             System.err.println(EMPTY_INPUT);
         }
     }
-    // Returns the sorted array of words in lowercase
+    // Returns the sorted list of words in lowercase
     public static List<String> sortList(List<String> words) {
         return words.stream()
                 .map(word -> word.toLowerCase())
                 .sorted()
                 .collect(Collectors.toList());
     }
-    //Returns the array of words with first symbol as an uppercase using stream
+    //Returns the list of words with first symbol as an uppercase using stream
     public static List<String> wordsFirstLetterToUpperCase(List<String> words) {
         return words.stream().map(TaskThree::firstLetterToUpperCase)
                 .collect(Collectors.toList());
