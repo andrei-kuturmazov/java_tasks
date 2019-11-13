@@ -35,9 +35,7 @@ public class TaskFive {
     }
 
     /**
-     * Returns the array of palindrome values
-     * @param input
-     * @return
+     * Determinate the palindrome values for input segment and returns the these values as array
      */
     public static List<Integer> palindromeValues(int input){
         data = new ArrayList<>(input);

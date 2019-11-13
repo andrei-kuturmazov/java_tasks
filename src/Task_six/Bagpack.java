@@ -5,9 +5,7 @@ import java.util.List;
 public class Bagpack {
 
     /**
-     * Returns the items list based on Bellman's algorithm
-     * @param items
-     * @param maxWeight
+     * Method is based on Bellman's algorithm is using for most valuable items selection
      */
     public void packItems(List<Item> items, int maxWeight) {
         int[][] weightCount = new int[maxWeight + 1][items.size() + 1];

@@ -40,18 +40,14 @@ public class TaskOne {
     }
 
     /**
-     * Returns the number parity type
-     * @param input
-     * @return
+     * Determinate number's parity type.
      */
     public static String getParityType(int input) {
         return input % 2 == 0 ? COUNTABLE : UNCOUNTABLE;
     }
 
     /**
-     * Returns determined number type
-     * @param input
-     * @return
+     * Determinate number's type (simple or not).
      */
     public static String determineNumberType(int input) {
         int absoluteValue = Math.abs(input);

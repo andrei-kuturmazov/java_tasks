@@ -36,10 +36,7 @@ public class TaskTwo {
     }
 
     /**
-     * Returns greater common delimiter using recursion
-     * @param a
-     * @param b
-     * @return
+     * Determinate greater common delimiter of two numbers using recursion
      */
     public static int greaterCommonDelimiter(int a, int b) {
         if (b == 0)
@@ -48,10 +45,7 @@ public class TaskTwo {
     }
 
     /**
-     * Returns minimum common multiple of two number using greater common delimiter
-     * @param a
-     * @param b
-     * @return
+     * Determinate minimum common multiple of two number using greater common delimiter
      */
     public static int minimumCommonMultiple(int a, int b) {
         return Math.abs((a * b) / greaterCommonDelimiter(a, b));

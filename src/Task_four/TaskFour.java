@@ -35,10 +35,7 @@ public class TaskFour {
 
 
     /**
-     * Returns the words count in sentence separated by " "
-     * @param wordForSearch
-     * @param sentenceForSearch
-     * @return
+     * Method is for word counting in sentence, separated by " "
      */
     public static long repeatCount(String wordForSearch, String sentenceForSearch) {
         return Arrays.stream(sentenceForSearch.split(" "))

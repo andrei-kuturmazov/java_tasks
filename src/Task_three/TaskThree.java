@@ -38,9 +38,7 @@ public class TaskThree {
     }
 
     /**
-     * Returns the list of words with first symbol as an uppercase
-     * @param words
-     * @return
+     * Method is used for list items sorting and transforming text to lowercase
      */
     public static List<String> sortList(List<String> words) {
         return words.stream()
@@ -50,9 +48,7 @@ public class TaskThree {
     }
 
     /**
-     * Returns the list of words with first symbol as an uppercase
-     * @param words
-     * @return
+     * Method is used for transforming word's first letters to uppercase
      */
     public static List<String> wordsFirstLetterToUpperCase(List<String> words) {
         return words.stream()
@@ -61,9 +57,7 @@ public class TaskThree {
     }
 
     /**
-     * Returns word with first letter in uppercase
-     * @param word
-     * @return
+     * Modify the word's first letter to uppercase
      */
     public static String firstLetterToUpperCase (String word) {
         return word.substring(0, 1).toUpperCase() + word.substring(1);
