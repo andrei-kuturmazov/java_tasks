@@ -9,7 +9,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -21,7 +20,6 @@ public class TaskThree {
     private static final String SORTED_WORDS = "Отсортированные слова с первой заглавной буквой: %s";
     private static String input;
     private static List<String> words = new ArrayList<>();
-    private static List<String> sortedOutput;
 
     public static void main(String[] args) {
         System.out.println(INPUT_STRING);
@@ -35,14 +33,15 @@ public class TaskThree {
             System.out.println(String.format(WORD_COUNT, words.size()));
             System.out.println(String.format(SORTED_WORDS, wordsFirstLetterToUpperCase(sortList(words))));
         } catch (IOException e) {
-            e.printStackTrace();
+            System.err.println(EMPTY_INPUT);
         }
     }
     // Returns the sorted array of words in lowercase
     public static List<String> sortList(List<String> words) {
-        sortedOutput = new ArrayList<>(words);
-        Collections.sort(sortedOutput, String.CASE_INSENSITIVE_ORDER);
-        return sortedOutput;
+        return words.stream()
+                .map(word -> word.toLowerCase())
+                .sorted()
+                .collect(Collectors.toList());
     }
     //Returns the array of words with first symbol as an uppercase using stream
     public static List<String> wordsFirstLetterToUpperCase(List<String> words) {
