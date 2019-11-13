@@ -23,7 +23,7 @@ public class TaskThree {
 
     public static void main(String[] args) {
         System.out.println(INPUT_STRING);
-        try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))){
+        try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))) {
             input = reader.readLine().trim();
             if (input.isEmpty()) {
                 System.out.println(EMPTY_INPUT);
@@ -36,24 +36,18 @@ public class TaskThree {
             System.err.println(EMPTY_INPUT);
         }
     }
-
-    /**
-     * Returns the sorted list of words in lowercase
-     * @param words
-     * @return
-     */
-    public static List<String> sortList(List<String> words) {
-        return words.stream()
-                .map(String::toLowerCase)
-                .sorted()
-                .collect(Collectors.toList());
-    }
-
     /**
      * Returns the list of words with first symbol as an uppercase
      * @param words
      * @return
      */
+    public static List<String> sortList(List<String> words) {
+        return words.stream()
+                .map(word -> word.toLowerCase())
+                .sorted()
+                .collect(Collectors.toList());
+    }
+    //Returns the list of words with first symbol as an uppercase using stream
     public static List<String> wordsFirstLetterToUpperCase(List<String> words) {
         return words.stream()
                 .map(TaskThree::firstLetterToUpperCase)

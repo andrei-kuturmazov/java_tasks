@@ -33,6 +33,7 @@ public class TaskFour {
         }
     }
 
+
     /**
      * Returns the words count in sentence separated by " "
      * @param wordForSearch
@@ -40,8 +41,7 @@ public class TaskFour {
      * @return
      */
     public static long repeatCount(String wordForSearch, String sentenceForSearch) {
-        return Arrays.stream(sentenceForSearch.split(" "))
-                .filter(word -> word.toLowerCase().equals(wordForSearch.toLowerCase()))
+        return Arrays.stream(sentenceForSearch.split(" ")).filter(word -> word.toLowerCase().equals(wordForSearch.toLowerCase()))
                 .count();
     }
 }
