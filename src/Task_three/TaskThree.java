@@ -43,11 +43,16 @@ public class TaskThree {
      */
     public static List<String> sortList(List<String> words) {
         return words.stream()
-                .map(word -> word.toLowerCase())
+                .map(String::toLowerCase)
                 .sorted()
                 .collect(Collectors.toList());
     }
-    //Returns the list of words with first symbol as an uppercase using stream
+
+    /**
+     * Returns the list of words with first symbol as an uppercase
+     * @param words
+     * @return
+     */
     public static List<String> wordsFirstLetterToUpperCase(List<String> words) {
         return words.stream()
                 .map(TaskThree::firstLetterToUpperCase)
