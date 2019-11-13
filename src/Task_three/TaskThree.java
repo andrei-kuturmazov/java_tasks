@@ -29,7 +29,7 @@ public class TaskThree {
                 System.out.println(EMPTY_INPUT);
                 return;
             }
-            words = Arrays.asList(input.toLowerCase().split(" "));
+            words = Arrays.asList(input.split(" "));
             System.out.println(String.format(WORD_COUNT, words.size()));
             System.out.println(String.format(SORTED_WORDS, wordsFirstLetterToUpperCase(sortList(words))));
         } catch (IOException e) {
