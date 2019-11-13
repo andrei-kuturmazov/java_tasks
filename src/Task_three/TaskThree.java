@@ -36,6 +36,7 @@ public class TaskThree {
             System.err.println(EMPTY_INPUT);
         }
     }
+
     /**
      * Returns the list of words with first symbol as an uppercase
      * @param words
