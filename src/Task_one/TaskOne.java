@@ -14,10 +14,6 @@ public class TaskOne {
     private static final String INPUT_STRING = "Введите, пожалуйста, число для проверки";
     private static final String ERROR_MESSAGE = "Вы ввели неверное значение";
     private static final String ZERO_INPUT = "Ноль и единица не могут участвовать в проверке";
-    private static final String COUNTABLE = "четным";
-    private static final String UNCOUNTABLE = "нечетным";
-    private static final String SIMPLE = "простым";
-    private static final String CONSTRUCT = "составным";
     private static final String OUTPUT_STRING = "Введенное вами число %s является %s, %s числом";
     private static final int ZERO_VALUE = 0;
     private static final int ABS_ONE = 1;
@@ -30,32 +26,12 @@ public class TaskOne {
                 System.err.println(ZERO_INPUT);
                 return;
             }
-            String output = String.format(OUTPUT_STRING, input, getParityType(input), determineNumberType(input));
+            String output = String.format(OUTPUT_STRING, input, CountableType.getParityType(input).getType(), NumberType.determineNumberType(input).getType());
             System.out.println(output);
         } catch (NumberFormatException e) {
             System.err.println(ERROR_MESSAGE);
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
-
-    /**
-     * Determinate number's parity type.
-     */
-    public static String getParityType(int input) {
-        return input % 2 == 0 ? COUNTABLE : UNCOUNTABLE;
-    }
-
-    /**
-     * Determinate number's type (simple or not).
-     */
-    public static String determineNumberType(int input) {
-        int absoluteValue = Math.abs(input);
-        for (int index = 2; index < absoluteValue; index++) {
-            if (absoluteValue % index == 0) {
-                return CONSTRUCT;
-            }
-        }
-        return SIMPLE;
     }
 }
