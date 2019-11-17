@@ -20,8 +20,8 @@ public class TaskTwo {
     public static void main(String[] args) {
         System.out.println(INPUT_STRING);
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))){
-            int one = Integer.parseInt(reader.readLine().trim());
-            int two = Integer.parseInt(reader.readLine().trim());
+            long one = Integer.parseInt(reader.readLine().trim());
+            long two = Integer.parseInt(reader.readLine().trim());
             if (one == ZERO_VALUE || two == ZERO_VALUE) {
                 System.err.println(ZERO_INPUT);
                 return;
@@ -38,7 +38,7 @@ public class TaskTwo {
     /**
      * Determinate greater common delimiter of two numbers using recursion
      */
-    public static int greaterCommonDelimiter(int a, int b) {
+    public static long greaterCommonDelimiter(long a, long b) {
         if (b == 0)
             return Math.abs(a);
         return greaterCommonDelimiter(b, a % b);
@@ -47,7 +47,7 @@ public class TaskTwo {
     /**
      * Determinate minimum common multiple of two number using greater common delimiter
      */
-    public static int minimumCommonMultiple(int a, int b) {
+    public static long minimumCommonMultiple(long a, long b) {
         return Math.abs((a * b) / greaterCommonDelimiter(a, b));
     }
 }
