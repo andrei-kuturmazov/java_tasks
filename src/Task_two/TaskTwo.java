@@ -20,14 +20,14 @@ public class TaskTwo {
     public static void main(String[] args) {
         System.out.println(INPUT_STRING);
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))){
-            long one = Integer.parseInt(reader.readLine().trim());
-            long two = Integer.parseInt(reader.readLine().trim());
-            if (one == ZERO_VALUE || two == ZERO_VALUE) {
+            long firstNumber = Integer.parseInt(reader.readLine().trim());
+            long secondNumber = Integer.parseInt(reader.readLine().trim());
+            if (firstNumber == ZERO_VALUE || secondNumber == ZERO_VALUE) {
                 System.err.println(ZERO_INPUT);
                 return;
             }
-            System.out.println(String.format(GCD_VALUE, one, two, greaterCommonDelimiter(one, two)));
-            System.out.println(String.format(MCM_VALUE, one, two, minimumCommonMultiple(one, two)));
+            System.out.println(String.format(GCD_VALUE, firstNumber, secondNumber, greaterCommonDelimiter(firstNumber, secondNumber)));
+            System.out.println(String.format(MCM_VALUE, firstNumber, secondNumber, minimumCommonMultiple(firstNumber, secondNumber)));
         } catch (NumberFormatException e) {
             System.err.println(ERROR_MESSAGE);
         } catch (IOException e) {
