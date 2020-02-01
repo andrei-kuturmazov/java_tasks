@@ -20,8 +20,8 @@ public class TaskTwo {
     public static void main(String[] args) {
         System.out.println(INPUT_STRING);
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))){
-            long firstNumber = Integer.parseInt(reader.readLine().trim());
-            long secondNumber = Integer.parseInt(reader.readLine().trim());
+            long firstNumber = Long.parseLong(reader.readLine().trim());
+            long secondNumber = Long.parseLong(reader.readLine().trim());
             if (firstNumber == ZERO_VALUE || secondNumber == ZERO_VALUE) {
                 System.err.println(ZERO_INPUT);
                 return;
